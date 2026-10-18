@@ -1,0 +1,432 @@
+
+:root {
+    --font-colouye: #141428;
+    --back-colour: #fff3e6;
+    --hover: #14142815;
+
+    --card-colour: #ffffff;
+    --border-colour: rgba(20, 20, 40, 0.15);
+    --glass-colour: rgba(255, 255, 255, 0.65);
+    --shadow-colour: rgba(20, 20, 40, 0.12);
+    --input-colour: #ffffff;
+    --muted-colour: #777777;
+    --table-row-colour: rgba(20, 20, 40, 0.025);
+    --table-head-colour: rgba(20, 20, 40, 0.05);
+    --button-bg: #ececec;
+    --button-text: #5f55e9;
+    --popup-heading: #141428;
+}
+
+:root[data-theme="dark"] {
+    --font-colouye: #fffefe;
+    --back-colour: #090909;
+    --hover: #fff3e655;
+
+    --card-colour: #1c1c1c;
+    --border-colour: rgba(255, 255, 255, 0.15);
+    --glass-colour: rgba(255, 255, 255, 0.12);
+    --shadow-colour: rgba(0, 0, 0, 0.4);
+    --input-colour: #252525;
+    --muted-colour: #aaaaaa;
+    --table-row-colour: rgba(255, 255, 255, 0.025);
+    --table-head-colour: rgba(255, 255, 255, 0.08);
+    --button-bg: #292929;
+    --button-text: #c5c0ff;
+    --popup-heading: #fffefe;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--back-colour);
+    color: var(--font-colouye);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sear {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.sear button {
+    border: none;
+    padding: 8px 22px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    background: var(--button-bg);
+    color: var(--button-text);
+    transition: 0.3s;
+}
+
+.sebar {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+.sebar input {
+    margin: 5px;
+    width: 400px;
+    padding: 8px 10px;
+    font-size: 15px;
+    font-weight: 400;
+    border: 1px solid var(--border-colour);
+    color: var(--font-colouye);
+    background: var(--input-colour);
+    border-radius: 10px;
+    outline: none;
+    transition: 0.25s;
+    box-sizing: border-box;
+}
+
+.sebar input::placeholder {
+    color: var(--muted-colour);
+}
+
+.sebar button {
+    border: none;
+    padding: 8px 22px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    background: var(--button-bg);
+    color: var(--button-text);
+    transition: 0.3s;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin-top: 20px;
+
+    background: linear-gradient(
+        180deg,
+        var(--glass-colour),
+        var(--card-colour)
+    );
+
+    border: 1px solid var(--border-colour);
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 32px var(--shadow-colour),
+        inset 0 1px 1px rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Table header */
+
+thead {
+    background: var(--table-head-colour);
+    backdrop-filter: blur(10px);
+}
+
+th,
+td {
+    width: 15.66%;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--font-colouye);
+    border-bottom: 1px solid var(--border-colour);
+    text-align: center;
+    vertical-align: middle;
+    padding: 20px 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Table rows */
+
+td {
+    padding: 14px 16px;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--font-colouye);
+    text-align: center;
+    border-bottom: 1px solid var(--border-colour);
+}
+
+/* Zebra effect */
+
+tbody tr:nth-child(even) {
+    background: var(--table-row-colour);
+}
+
+/* Hover effect */
+
+tbody tr:hover td {
+    background: var(--hover);
+    color: var(--font-colouye);
+    transition: 0.2s ease-in-out;
+}
+
+/* Delete button */
+
+td button {
+    margin: 4px;
+    padding: 6px 12px;
+    border: 1px solid rgba(255, 80, 80, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 80, 80, 0.2);
+    color: var(--font-colouye);
+    font-size: 13px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+td button:hover {
+    background: rgba(255, 80, 80, 0.35);
+    transform: translateY(-2px);
+}
+
+td .edit {
+    background: rgba(29, 244, 101, 0.15);
+    color: #168c42;
+    border: 1px solid rgba(83, 255, 80, 0.3);
+}
+
+:root[data-theme="dark"] td .edit {
+    color: #69f59a;
+}
+
+td .edit:hover {
+    background: rgba(29, 244, 101, 0.356);
+    transform: translateY(-2px);
+}
+
+td .complete {
+    background: rgba(100, 80, 255, 0.2);
+    color: #5143cc;
+    border: 1px solid rgba(130, 80, 255, 0.3);
+}
+
+:root[data-theme="dark"] td .complete {
+    color: #b3b8ff;
+}
+
+/* Horizontal table scrolling */
+
+table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* Edit popup */
+
+.edit-popup {
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 380px;
+
+    background: linear-gradient(
+        180deg,
+        var(--card-colour),
+        var(--glass-colour)
+    );
+
+    border: 1px solid var(--border-colour);
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 32px var(--shadow-colour),
+        inset 0 1px 1px rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    margin: 60px auto;
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    z-index: 999;
+}
+
+/* Popup heading */
+
+.edit-popup h2 {
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+    color: var(--popup-heading);
+}
+
+/* Popup inputs */
+
+.edit-popup input {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 400;
+    border: 1px solid var(--border-colour);
+    background: var(--input-colour);
+    color: var(--font-colouye);
+    border-radius: 10px;
+    outline: none;
+    transition: 0.25s;
+    box-sizing: border-box;
+}
+
+.edit-popup input::placeholder {
+    color: var(--muted-colour);
+}
+
+.edit-popup input:focus {
+    border-color: #6d63e9;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+}
+
+/* Popup buttons */
+
+.popup-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.popup-buttons button {
+    border: none;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cancel {
+    background: var(--button-bg);
+    color: var(--button-text);
+}
+
+.cancel:hover {
+    background: var(--border-colour);
+}
+
+.save {
+    background: #5146d8;
+    color: #ffffff;
+}
+
+.save:hover {
+    background: #4338ca;
+}
+
+.dis {
+    display: none;
+}
+
+.add {
+    display: none;
+}
+
+/* Select dropdown */
+
+select {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    font-weight: 400;
+    border: 1px solid var(--border-colour);
+    background: var(--input-colour);
+    color: var(--font-colouye);
+    border-radius: 10px;
+    outline: none;
+    transition: 0.25s;
+    box-sizing: border-box;
+}
+
+select option {
+    background: var(--input-colour);
+    color: var(--font-colouye);
+}
+
+/* Table container */
+
+.table-container {
+    position: relative;
+}
+
+/* Full page blur overlay */
+
+.blur-overlay {
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+
+/* Priority labels */
+
+.low {
+    background-color: #44ee8d;
+    color: #0f0fcc;
+}
+
+.medium {
+    background-color: #ffeb3b;
+    color: #1d19d6;
+}
+
+.high {
+    background-color: #e53935;
+    color: #ffffff;
+}
+
+/* Error message */
+
+.error {
+    color: #e53935;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+/* Loading overlay */
+
+.loader-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Spinner */
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--border-colour);
+    border-top: 5px solid #5146d8;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

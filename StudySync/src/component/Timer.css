@@ -1,0 +1,105 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.clock {
+  margin: auto;
+  margin-top: 6rem;
+  width: 400px;
+  height: 400px;
+  padding: 10px;
+  border: 1px solid var(--border-colour);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    180deg,
+    var(--glass-colour),
+    var(--card-colour)
+  );
+
+  box-shadow:
+    0 8px 32px var(--shadow-colour),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.timer {
+  width: 400px;
+  padding: 35px;
+  border-radius: 20px;
+  text-align: center;
+  color: var(--font-colouye);
+}
+
+.running {
+  font-size: 70px;
+  font-weight: bold;
+  color: #4bffff;
+  margin: 25px 0;
+}
+
+.session {
+  margin-top: auto;
+  color: var(--font-colouye);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.button button {
+  width: 120px;
+  height: 2.5rem;
+  padding: 0 10px;
+  border-radius: 8px;
+  border: none;
+  background: var(--font-colouye);
+  color: var(--back-colour);
+  font-weight: 400;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.button button:hover {
+  opacity: 0.8;
+}
+
+.button button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+:root[data-theme="light"] .running {
+  color: #075e83;
+}
+
+@media (max-width: 500px) {
+  .clock {
+    width: 100%;
+    max-width: 400px;
+    height: 350px;
+    margin-top: 3rem;
+  }
+
+  .timer {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .running {
+    font-size: 52px;
+  }
+}

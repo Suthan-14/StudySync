@@ -1,0 +1,225 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: ease-in 0.25s;
+}
+
+.notesearch {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+input {
+    margin: 5px;
+    width: 400px;
+    max-width: 100%;
+    padding: 8px 10px;
+    font-size: 15px;
+    font-weight: 400;
+    border: 1px solid var(--border-colour);
+    color: var(--font-colouye);
+    background: var(--input-colour);
+    border-radius: 10px;
+    outline: none;
+    transition: 0.25s;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #7771e8;
+    box-shadow: 0 0 0 3px rgba(119, 113, 232, 0.15);
+}
+
+button {
+    padding: 5px;
+}
+
+.btnf {
+    display: flex;
+    gap: 6px;
+}
+
+.add-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+}
+
+.box {
+    display: flex;
+    width: 100%;
+    margin: 40px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.note {
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    flex: 0 1 450px;
+    padding: 8px;
+    border: 1px solid var(--border-colour);
+    border-radius: 10px;
+    background: var(--glass-colour);
+    color: var(--font-colouye);
+    box-shadow: 0 8px 32px var(--shadow-colour);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.note p {
+    flex: 1;
+    color: var(--font-colouye);
+}
+
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--font-colouye);
+    
+}
+
+.infoo {
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.note:hover .infoo {
+  opacity: 1;
+  visibility: visible;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #367bf5;
+    font-weight: 400;
+}
+
+.footer p {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--muted-colour);
+}
+
+p span {
+    font-weight: 400;
+    color: #12c98a;
+}
+
+.infoo {
+    display: flex;
+    gap: 8px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.note:hover .pin,
+.note:hover .like,
+.note:hover .ebtn {
+    opacity: 1;
+    visibility: visible;
+}
+
+.pin {
+    
+    width: auto;
+    background: transparent;
+    color: var(--font-colouye);
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.pined {
+    opacity: 1;
+    visibility: visible;
+    color: #ff9800;
+    border-radius: 6px;
+}
+
+.like {
+    width: auto;
+    background: transparent;
+    color: var(--font-colouye);
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.like-btn:active {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.ebtn {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+}
+
+.ebtn button {
+    width: auto;
+}
+
+@media (max-width: 600px) {
+    .notesearch {
+        flex-direction: column;
+    }
+
+    .notesearch input {
+        width: 100%;
+        margin: 0;
+    }
+
+    .box {
+        width: auto;
+        margin: 20px 0;
+    }
+
+    .note {
+        flex: 1 1 100%;
+    }
+
+    .infoo {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .ebtn {
+        visibility: visible;
+        opacity: 1;
+    }
+}

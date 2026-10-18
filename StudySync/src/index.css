@@ -1,0 +1,45 @@
+
+:root {
+  --bg-color: #fff3e6;
+  --card-color: #ffffff;
+  --text-color: #141428;
+  --sidebar-color: #ffffff;
+  --border-color: #e3dcd4;
+  --input-color: #ffffff;
+}
+
+:root[data-theme="dark"] {
+  --bg-color: #141428;
+  --card-color: #202039;
+  --text-color: #fff3e6;
+  --sidebar-color: #19192f;
+  --border-color: #393950;
+  --input-color: #25253b;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.card,
+.modal-content {
+  background-color: var(--card-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+input,
+textarea,
+select {
+  background-color: var(--input-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-color);
+  opacity: 0.6;
+}
