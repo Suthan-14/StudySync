@@ -1,6 +1,6 @@
 
-import React, { useEffect, useState } from "react";
-import { FaPaperclip, FaRegHeart } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { FaPaperclip} from "react-icons/fa";
 import Swal from "sweetalert2";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -208,7 +208,7 @@ function Notes() {
               <div className="header">
                 <h4>{note.title}</h4>
 
-                <div className="infoo">
+                <div className={`infoo ${note.pin ? "showinfo":""}`}>
                   <button
                     type="button"
                     className={`pin ${note.pin ? "pined" : ""}`}

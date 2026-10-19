@@ -204,7 +204,7 @@ function MainLayout() {
 
       <div className="search">
         <div className="info">
-          <p>Hi user |</p>
+          <p>Welcome back |</p>
           <p>{user.username || user.name || "Student"}</p>
         </div>
 

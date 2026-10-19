@@ -51,7 +51,7 @@ exports.Upnotes = async (req, res, next) => {
             },
             req.body,
             {
-                new: true
+                  returnDocument: "after"
             }
         );
 
@@ -111,7 +111,8 @@ exports.uppin = async (req, res,next) => {
                 }
             },
             {
-                new: true
+                    returnDocument: "after" 
+
             }
         );
 
